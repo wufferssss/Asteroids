@@ -14,16 +14,18 @@ def main():
     clock = pygame.time.Clock()
     player = Player(x=SCREEN_WIDTH/2, y=SCREEN_HEIGHT/2)
 
-    screen.fill("black")
     dt = 0.0
 
     # basic game loop to keep window open and accept inputs/event
     while True:
         log_state()
-        player.draw(screen)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        
+        screen.fill("black")
+        player.update(dt)
+        player.draw(screen)
 
         pygame.display.flip()
 
