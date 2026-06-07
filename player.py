@@ -23,7 +23,6 @@ class Player(CircleShape):
 
     def rotate(self, dt):
         self.rotation += PLAYER_TURN_SPEED * dt
-        # print(f"In self.rotate(): {self.rotation}")
 
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)
@@ -32,13 +31,8 @@ class Player(CircleShape):
         self.position += rotated_with_speed_vector
 
     def shoot(self):
-        # print(f"In self.shoot(): {self.rotation}")
-        new_shot = Shot(self.position.x, self.position.y)
-        new_shot.velocity = pygame.Vector2(0,1)
-        print(f"player rotation: {self.rotation}")
-        print(f"shot rotation: {new_shot.velocity}")
-        new_shot.velocity.rotate(self.rotation)
-        new_shot.velocity *= PLAYER_SHOOT_SPEED
+        shot = Shot(self.position.x, self.position.y)
+        shot.velocity = pygame.Vector2(0,1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
 
     def update(self, dt: float) -> None:
         keys = pygame.key.get_pressed()
