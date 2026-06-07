@@ -1,3 +1,3 @@
 # Asteroids
 
-A small game aobut shooting asteroids
+A small game about shooting asteroids
