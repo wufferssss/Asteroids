@@ -5,6 +5,12 @@ import pygame
 from asteroid import Asteroid
 from constants import *
 
+#########################################
+#                                       #
+#      Class provided by Boot.Dev       #
+#                                       #
+#########################################
+
 Edge = tuple[pygame.Vector2, Callable[[float], pygame.Vector2]]
 
 class AsteroidField(pygame.sprite.Sprite):

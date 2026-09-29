@@ -4,6 +4,12 @@ import math
 from datetime import datetime
 from typing import NotRequired, TypedDict
 
+#########################################
+#                                       #
+#      Class provided by Boot.Dev       #
+#                                       #
+#########################################
+
 class SpriteInfo(TypedDict):
     type: str
     pos: NotRequired[list[float]]

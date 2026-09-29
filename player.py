@@ -10,6 +10,7 @@ class Player(CircleShape):
         self.rotation = 0
         self.shoot_delay = 0
 
+    # triangle method provided by Boot.Dev
     # in the Player class
     def triangle(self) -> list[pygame.Vector2]:
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
@@ -25,6 +26,7 @@ class Player(CircleShape):
     def rotate(self, dt):
         self.rotation += PLAYER_TURN_SPEED * dt
 
+    # move method provided by Boot.Dev
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)
         rotated_vector = unit_vector.rotate(self.rotation)
